@@ -3,7 +3,7 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import configparser
 
-
+# This methods connects to the MongoDB
 def get_database():
 
    config = configparser.ConfigParser()

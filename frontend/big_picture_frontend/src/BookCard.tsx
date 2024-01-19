@@ -1,7 +1,7 @@
 import { Book } from './types/book';
 import "./BookCard.css"; 
 
-
+// This function is for showing details of each book as in a card 
 const BookCard = (props: { book: Book; }) => {
     const book = props.book;
 

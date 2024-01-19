@@ -3,6 +3,7 @@ import { Book } from "../types/book"
 
 export class bookHTTPService {
 
+    // these methods are for making HTTP Requests to the server
 
     public static async getBook(isbn: string): Promise<Book> {
 

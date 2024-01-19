@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import BookCard from "./BookCard";
 import "./IndexPage.css";
 import { bookHTTPService } from "./api/books.service";
@@ -10,7 +10,7 @@ const IndexPage = () => {
     const [searchValue, setSearchValue] = useState("");
     const [message, setMessage] = useState<string | null>(null);
 
-
+    // function which fetches the books from backend
     const fetchAllBooks = async () => {
         try {
             const books = await bookHTTPService.getAllBooks();
@@ -22,6 +22,7 @@ const IndexPage = () => {
         }
     };
 
+    // function which handles the search 
     const handleSearch = async () => {
         const isbn = encodeURIComponent(searchValue);
         try {
@@ -30,10 +31,12 @@ const IndexPage = () => {
             setAllBooks(null);
             setMessage(null);
         } catch (error: any) {
+            setBook(null);
             setMessage(`${error.response.data.detail}`);
         }
     };
 
+    // function which saves a book to the DB
     const handleAddToDatabase = async () => {
         if (book) {
             try {
