@@ -37,7 +37,7 @@ async def get_all_books():
      
 # PUT endpoint to add the book to the DB
 @app.put("/books")
-async def update_ticket_status(
+async def save_book(
     request: Request
 ):
     request_body = await request.json()
